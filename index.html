@@ -129,9 +129,29 @@
                 }
                 
                 .slideshow-container {
-                position:relative;
-                width: 100%;
-                height: 50%;
+                    position:relative;
+                    width: 100%;
+                    height: 50%;
+                }
+
+                .nav-links {
+                    display: none; /* Hidden by default */
+                    flex-direction: column;
+                    width: 100%;
+                    background-color: #333;
+                 }
+
+                .nav-links.show {
+                    display: flex; /* Show menu when toggled */
+                }
+                
+                .nav-links li {
+                    text-align: center;
+                    margin: 10px 0;
+                }
+                
+                .menu-toggle {
+                    display: block; /* Show hamburger icon on small screens */
                 }
             }
             
@@ -159,13 +179,16 @@
         </header>
         
         <div>
-            <nav>
-                <a >Home</a>
-                <a>Seasonal Offers</a>
-                <a>Categories</a>
-                <a>Activities</a>
-                <a>Contact us</a>
-                <a>About</a>
+            <nav class="nav">
+                <div class="menu-toggle" id="menu-toggle">☰</div>
+                    <ul class="nav-links" id="nav-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">Contact</a></li>
+                        
+                    </ul>
             </nav>
         </div>
 
@@ -178,7 +201,17 @@
                 <img src="image4.jpg" alt="Image 4">
             </div>
         </div>
-        
+
+
+
+        <script>
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+
+            menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+            });
+        </script>
     
     </body>
 </html>

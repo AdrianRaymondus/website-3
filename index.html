@@ -75,7 +75,7 @@
                 75%, 95% { transform: translateX(-75%); }   /* Pause on fourth image */
                 100% { transform: translateX(-100%, 0%); }  
                 
-            }nav-links{
+            }nav{
                 display: flex;
                 justify-content:space-around;
                 color: rgb(255, 255, 255);
@@ -93,10 +93,16 @@
                 background-color: rgb(25, 36, 84);
                 border-radius: 7%;
                 transform: scale(1.1);
-                cursor: pointer;
-                
-                
+                cursor: pointer;  
             }
+            .nav-links {
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    background-color: rgb(255, 255, 255);
+                    justify-content:space-around;
+                 }
+            
             @media (max-width: 768px){
                 nav {
                     flex-direction: column;
@@ -189,11 +195,11 @@
             <nav class="nav">
                 <div class="menu-toggle" id="menu-toggle">☰</div>
                     <div class="nav-links" id="nav-links">
-                        <p><a href="#">Home</a></p>
-                        <p><a href="#">About</a></p>
-                        <p><a href="#">Services</a></p>
-                        <p><a href="#">Categories</a></p>
-                        <p><a href="#">Contact</a></p>
+                        <a href="#">Home</a>
+                        <a href="#">About</a>
+                        <a href="#">Services</a>
+                        <a href="#">Categories</a>
+                        <a href="#">Contact</a>
                         
                     </div>
             </nav>
